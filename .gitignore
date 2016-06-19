@@ -1,3 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
-mongo/
+mongo/*
+!mongo/uk_postcodes/file-loop.sh
+!mongo/Dockerfile
