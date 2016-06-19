@@ -2,6 +2,7 @@ from json import dumps
 from bson import json_util
 from geojson import crs, is_valid, loads
 from pymongo import MongoClient
+import os
 
 
 def postcode_search(postcode):
@@ -69,7 +70,9 @@ def get_json_from_mongodb(collection_name, postcode):
     :param postcode: postcode string
     :return: flask response json
     """
-    client = MongoClient()
+    # client = MongoClient()
+    client = MongoClient(os.environ['DB_PORT_27017_TCP_ADDR'], 27017)
+    print("CLIENT: ", client)
     db = client.postcodes
     collection = db[str(collection_name)]
     result = collection.find_one({"properties.postcode": postcode.upper()})
