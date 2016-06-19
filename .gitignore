@@ -1,6 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
 mongo/*
-!mongo/uk_postcodes/file-loop.sh
+!mongo/file-loop.sh
 !mongo/Dockerfile
 !mongo/csv_to_geojson.py
