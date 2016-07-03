@@ -1,6 +1,6 @@
 from flask_restful import Resource
 from flask import Response
-from search import postcode_search
+from web.search import postcode_search
 from json import dumps
 
 
@@ -33,6 +33,7 @@ def create_response(geojson, postcode):
         resp = Response(geojson,
                         status=200,
                         mimetype='application/json')
+        print(resp)
     else:
         # Failed postcode match response
         js_no_match = dumps({postcode: "NO MATCH"})
